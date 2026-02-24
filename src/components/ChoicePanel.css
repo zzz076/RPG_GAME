@@ -1,0 +1,50 @@
+.choice-panel {
+  border-top: 1px solid var(--color-border);
+  padding: 1.5rem 2rem;
+  animation: choiceFadeIn 0.5s ease-in;
+}
+
+.choice-list {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.choice-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--color-text);
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s;
+}
+
+.choice-btn:hover {
+  background: var(--color-bg-hover);
+  border-color: var(--color-gold-dim);
+  color: var(--color-gold);
+}
+
+.choice-index {
+  color: var(--color-gold-dim);
+  font-size: 0.85rem;
+  min-width: 1.2em;
+}
+
+.choice-text {
+  flex: 1;
+}
+
+@keyframes choiceFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

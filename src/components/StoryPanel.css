@@ -1,0 +1,61 @@
+.story-panel {
+  flex: 1;
+  padding: 2rem 3rem;
+  overflow-y: auto;
+  cursor: default;
+  animation: storyFadeIn 0.5s ease-in;
+}
+
+.story-text {
+  font-size: 1.1rem;
+  line-height: 2;
+  color: var(--color-text);
+  text-indent: 2em;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.story-cursor {
+  color: var(--color-gold);
+  animation: blink 0.8s infinite;
+}
+
+.ending-section {
+  text-align: center;
+  margin-top: 3rem;
+  animation: storyFadeIn 1s ease-in;
+}
+
+.ending-divider {
+  color: var(--color-gold-dim);
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  margin-bottom: 2rem;
+}
+
+.restart-btn {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--color-gold);
+  background: none;
+  border: 1px solid var(--color-gold);
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  letter-spacing: 0.2em;
+  transition: all 0.3s;
+}
+
+.restart-btn:hover {
+  background: var(--color-gold);
+  color: var(--color-bg);
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes storyFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
