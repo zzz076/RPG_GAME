@@ -11,7 +11,11 @@
       "WebSearch(*)",
       "Bash(npm run build 2>&1)",
       "Bash(kill %1 2>/dev/null; pkill -f \"vite\" 2>/dev/null; echo \"done\")",
-      "Bash(git add index.html src/ public/ .claude/settings.local.json && git commit -m \"$\\(cat <<'EOF'\nAdd RPG game MVP with wuxia story tree\n\n- Static story tree with 30+ nodes and 10+ endings\n- Typewriter text effect with click-to-skip\n- 4 choices per story node \\(wuxia-styled buttons\\)\n- History review panel\n- Dark theme with gold accents, Noto Serif TC font\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\" && git push origin dev 2>&1)"
+      "Bash(git add index.html src/ public/ .claude/settings.local.json && git commit -m \"$\\(cat <<'EOF'\nAdd RPG game MVP with wuxia story tree\n\n- Static story tree with 30+ nodes and 10+ endings\n- Typewriter text effect with click-to-skip\n- 4 choices per story node \\(wuxia-styled buttons\\)\n- History review panel\n- Dark theme with gold accents, Noto Serif TC font\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\" && git push origin dev 2>&1)",
+      "WebFetch(domain:ai.google.dev)",
+      "WebFetch(domain:www.aifreeapi.com)",
+      "WebFetch(domain:www.bladerpg.com)",
+      "Bash(git -C /Users/new/Desktop/rpg checkout -b feature/stat-system-and-story)"
     ]
   }
 }

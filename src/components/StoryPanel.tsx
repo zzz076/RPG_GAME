@@ -6,15 +6,26 @@ interface StoryPanelProps {
   isEnding?: boolean
   onTextComplete: () => void
   onRestart?: () => void
+  speed?: number
 }
 
-export function StoryPanel({ text, isEnding, onTextComplete, onRestart }: StoryPanelProps) {
+export function StoryPanel({ text, isEnding, onTextComplete, onRestart, speed = 1 }: StoryPanelProps) {
   const [displayedText, setDisplayedText] = useState('')
   const [isComplete, setIsComplete] = useState(false)
 
   useEffect(() => {
     setDisplayedText('')
     setIsComplete(false)
+
+    if (speed === 0) {
+      setDisplayedText(text)
+      setIsComplete(true)
+      onTextComplete()
+      return
+    }
+
+    const baseInterval = 40
+    const interval = baseInterval / speed
     let index = 0
     const timer = setInterval(() => {
       if (index < text.length) {
@@ -25,10 +36,10 @@ export function StoryPanel({ text, isEnding, onTextComplete, onRestart }: StoryP
         setIsComplete(true)
         onTextComplete()
       }
-    }, 40)
+    }, interval)
 
     return () => clearInterval(timer)
-  }, [text])
+  }, [text, speed])
 
   const handleSkip = () => {
     setDisplayedText(text)

@@ -1,0 +1,49 @@
+.stat-change-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 50;
+  pointer-events: none;
+}
+
+.stat-change-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  animation: statFloat 1.5s ease-out forwards;
+}
+
+.stat-change-item {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 0.3rem 1rem;
+  background: rgba(10, 10, 15, 0.85);
+  border-radius: 4px;
+}
+
+.stat-change-item.gain {
+  color: #6a9f6a;
+  border: 1px solid #3a5f3a;
+}
+
+.stat-change-item.loss {
+  color: #c45c5c;
+  border: 1px solid #5f3a3a;
+}
+
+@keyframes statFloat {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
