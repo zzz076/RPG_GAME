@@ -1,0 +1,65 @@
+.check-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 80;
+  animation: overlayFadeIn 0.3s ease;
+}
+
+.check-box {
+  text-align: center;
+  padding: 2rem 3rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-panel);
+  animation: checkAppear 0.5s ease;
+}
+
+.check-title {
+  font-size: 1rem;
+  color: var(--color-gold-dim);
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+}
+
+.check-detail {
+  font-size: 1.4rem;
+  color: var(--color-text);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.check-player {
+  font-size: 1rem;
+  color: var(--color-text-dim);
+  margin-bottom: 1.5rem;
+}
+
+.check-result {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+}
+
+.check-result.pass {
+  color: #6a9f6a;
+}
+
+.check-result.fail {
+  color: #c45c5c;
+}
+
+@keyframes checkAppear {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

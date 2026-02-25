@@ -5,9 +5,10 @@ interface ChoicePanelProps {
   choices: Choice[]
   onChoose: (choice: Choice) => void
   visible: boolean
+  onGoBack?: () => void
 }
 
-export function ChoicePanel({ choices, onChoose, visible }: ChoicePanelProps) {
+export function ChoicePanel({ choices, onChoose, visible, onGoBack }: ChoicePanelProps) {
   if (!visible) return null
 
   return (
@@ -24,6 +25,11 @@ export function ChoicePanel({ choices, onChoose, visible }: ChoicePanelProps) {
           </button>
         ))}
       </div>
+      {onGoBack && (
+        <button className="go-back-btn" onClick={onGoBack}>
+          回到上一步
+        </button>
+      )}
     </div>
   )
 }

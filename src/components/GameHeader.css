@@ -13,6 +13,17 @@
   letter-spacing: 0.3em;
 }
 
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.round-count {
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+}
+
 .history-btn {
   font-family: var(--font-serif);
   font-size: 0.9rem;
@@ -25,6 +36,23 @@
 }
 
 .history-btn:hover {
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+
+.speed-btn {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  color: var(--color-gold-dim);
+  background: none;
+  border: 1px solid var(--color-border);
+  padding: 0.25rem 0.7rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  min-width: 2.5em;
+}
+
+.speed-btn:hover {
   color: var(--color-gold);
   border-color: var(--color-gold);
 }
