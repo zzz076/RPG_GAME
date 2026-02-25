@@ -28,6 +28,7 @@ function applyEffects(stats: PlayerStats, effects: StatEffect): PlayerStats {
 
 function App() {
   const [phase, setPhase] = useState<GamePhase>('start')
+  const [playerName, setPlayerName] = useState('無名少年')
   const [currentNodeId, setCurrentNodeId] = useState(STARTING_NODE_ID)
   const [stats, setStats] = useState<PlayerStats>({ ...INITIAL_STATS })
   const [showChoices, setShowChoices] = useState(false)
@@ -51,7 +52,12 @@ function App() {
 
   const currentNode: GameNode | undefined = storyNodes[currentNodeId]
 
-  const handleStart = useCallback(() => {
+  const replacePlayerName = useCallback((text: string) => {
+    return text.replace(/\{playerName\}/g, playerName)
+  }, [playerName])
+
+  const handleStart = useCallback((name: string) => {
+    setPlayerName(name)
     setPhase('playing')
     setCurrentNodeId(STARTING_NODE_ID)
     setStats({ ...INITIAL_STATS })
@@ -212,9 +218,11 @@ function App() {
     )
   }
 
-  const displayText = isCheckNode(currentNode)
-    ? currentNode.text
-    : currentNode.text
+  const displayText = replacePlayerName(
+    isCheckNode(currentNode)
+      ? currentNode.text
+      : currentNode.text
+  )
 
   const isEnding = !isCheckNode(currentNode) && currentNode.isEnding
   const isDead = stats.生命 <= 0
@@ -238,7 +246,9 @@ function App() {
       />
       {!isCheckNode(currentNode) && currentNode.choices && (
         <ChoicePanel
-          choices={currentNode.choices}
+          choices={currentNode.choices.filter(
+            choice => !choice.requirement || stats[choice.requirement.attribute] >= choice.requirement.min
+          )}
           onChoose={handleChoose}
           visible={showChoices && !isDead}
           onGoBack={snapshots.length > 0 ? handleGoBack : undefined}

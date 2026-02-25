@@ -5,6 +5,12 @@ export interface PlayerStats {
   智謀: number
   名聲: number
   生命: number
+  // Personality Stats
+  向武: number
+  重情: number
+  世故: number
+  桀驁: number
+  守正: number
 }
 
 export type StatKey = keyof PlayerStats
@@ -16,6 +22,11 @@ export interface StatEffect {
   智謀?: number
   名聲?: number
   生命?: number
+  向武?: number
+  重情?: number
+  世故?: number
+  桀驁?: number
+  守正?: number
 }
 
 export interface Choice {
@@ -65,4 +76,9 @@ export const INITIAL_STATS: PlayerStats = {
   智謀: 5,
   名聲: 0,
   生命: 100,
+  向武: 0,
+  重情: 0,
+  世故: 0,
+  桀驁: 0,
+  守正: 0,
 }

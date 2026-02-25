@@ -41,6 +41,44 @@
   margin-bottom: 3rem;
 }
 
+.name-input-area {
+  margin-bottom: 2rem;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.name-label {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--color-text-dim);
+  letter-spacing: 0.2em;
+  margin-bottom: 0.8rem;
+}
+
+.name-input {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--color-gold);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--color-gold-dim);
+  padding: 0.5rem 1rem;
+  text-align: center;
+  width: 200px;
+  outline: none;
+  letter-spacing: 0.2em;
+  transition: border-color 0.3s;
+}
+
+.name-input:focus {
+  border-bottom-color: var(--color-gold);
+}
+
+.name-input::placeholder {
+  color: var(--color-text-dim);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+}
+
 .start-btn {
   font-family: var(--font-serif);
   font-size: 1.2rem;
