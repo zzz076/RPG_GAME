@@ -246,9 +246,7 @@ function App() {
       />
       {!isCheckNode(currentNode) && currentNode.choices && (
         <ChoicePanel
-          choices={currentNode.choices.filter(
-            choice => !choice.requirement || stats[choice.requirement.attribute] >= choice.requirement.min
-          )}
+          choices={currentNode.choices}
           onChoose={handleChoose}
           visible={showChoices && !isDead}
           onGoBack={snapshots.length > 0 ? handleGoBack : undefined}
