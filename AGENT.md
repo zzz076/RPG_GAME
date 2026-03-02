@@ -57,3 +57,53 @@ src/
 - AI 回傳格式需定義明確的 JSON schema，確保前端能穩定解析
 - 考慮 loading 狀態與錯誤處理（AI 回應可能較慢）
 - 劇情歷史應保存在 state 中，方便玩家回顧
+
+---
+
+## 劇情開發守則
+
+### 生成流程（骨架優先）
+1. **先生成結構骨架**：節點 ID、選項文字、nextId 指向、effects、check 門檻
+2. **text 欄位只放一句話**：描述該節點的情境（如「嚴墨揭露母親身份」），不寫完整氛圍文字
+3. **結構確認正確後**，再由用戶指示逐段補充氛圍描寫
+4. 這樣做是為了節省 token，避免生成大量文字後又因結構問題需要重寫
+
+### 讀檔守則（按任務類型）
+| 任務 | 需要讀的檔案 | 不需要讀的 |
+|------|------------|-----------|
+| 生成新節點 | AGENT.md + STORY_OUTLINE + NODE_TRACKER.md + CHARACTER_BIBLE（相關角色） | chapterXX.json |
+| 修改屬性平衡 | STATES.md + NODES_MAP.md | 完整 JSON |
+| 檢查一致性 | NODE_TRACKER.md + NODES_MAP.md | 完整 JSON |
+| 補充氛圍文字 | CHARACTER_BIBLE（相關角色）+ 該節點前後 2~3 個節點的 JSON | 完整 JSON |
+
+**核心原則：絕對不需要每次都讀完整 chapterXX.json**
+
+### 節點生成規範
+- 每個節點必須有 `id` 欄位
+- 選項文字只描述行動，不含內心描寫或動機解釋
+  - ✗ 「去藏經閣借閱功法，只要自身實力夠強，什麼陰謀都不怕」
+  - ✓ 「去藏經閣借閱功法」
+- 選項數量 2~4 個
+- 同一節點的選項不應全部指向同一個 nextId（除非劇情需要匯聚）
+- check 門檻要參考 STATES.md 中的成長預期（初始值 + 合理路線增長可達到）
+- 非結局節點必須有 `choices` 或 `passId/failId`
+- 結局節點必須有 `isEnding: true`，不應有 `choices`
+
+### 更新義務
+每次修改 JSON 後，**必須**同步更新以下檔案：
+- `NODES_MAP.md` — 節點拓撲
+- `NODE_TRACKER.md` — 新節點的揭露信息、時間線、角色知識
+- `STORY_OUTLINE.md` / `STORY_OUTLINE_CHXX.md` — 如果結構有變動
+
+### 開發參考檔案一覽
+| 檔案 | 用途 | 位置 |
+|------|------|------|
+| `AGENT.md` | 開發守則（本檔案） | 專案根目錄 |
+| `WORLD.md` | 世界觀速查 | `src/data/story/` |
+| `CHARACTER_BIBLE.md` | 角色性格、動機、行為邏輯 | `src/data/story/` |
+| `STATES.md` | 屬性系統、check 門檻、成長預期 | `src/data/story/` |
+| `STORY_OUTLINE.md` | 全篇故事骨幹 | `src/data/story/` |
+| `STORY_OUTLINE_CHXX.md` | 各章詳細結構 | `src/data/story/` |
+| `NODES_MAP.md` | 節點拓撲圖（id → nextId） | `src/data/story/` |
+| `NODE_TRACKER.md` | 動態追蹤：時間線、揭露、角色知識 | `src/data/story/` |
+| `game.ts` | 型別定義、初始屬性 | `src/types/` |

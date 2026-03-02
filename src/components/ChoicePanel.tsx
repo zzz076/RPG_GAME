@@ -16,7 +16,7 @@ export function ChoicePanel({ choices, onChoose, visible, onGoBack }: ChoicePane
       <div className="choice-list">
         {choices.map((choice, index) => (
           <button
-            key={choice.nextId}
+            key={index}
             className="choice-btn"
             onClick={() => onChoose(choice)}
           >

@@ -1,0 +1,749 @@
+{
+  "c03-001": {
+    "id": "c03-001",
+    "text": "清晨，禁地方向巨響，地面劇烈震動，窗戶碎裂。比第一次強十倍。",
+    "choices": [
+      {
+        "text": "衝出門往禁地方向跑",
+        "nextId": "c03-check-damage",
+        "effects": { "向武": 1, "智謀": 1 }
+      },
+      {
+        "text": "先找趙元啟和魏無期",
+        "nextId": "c03-find-allies",
+        "effects": { "重情": 1 }
+      },
+      {
+        "text": "從窗口觀察各方反應再行動",
+        "nextId": "c03-stay-alert",
+        "effects": { "智謀": 1, "世故": 1 }
+      }
+    ]
+  },
+  "c03-check-damage": {
+    "id": "c03-check-damage",
+    "text": "禁地外牆塌了一段，陣法裂縫滲出金色光芒。沈峻站在裂縫前，神色凝重。",
+    "choices": [
+      {
+        "text": "「師兄，裡面怎麼了？」",
+        "nextId": "c03-shen-warn",
+        "effects": { "智謀": 1 }
+      },
+      {
+        "text": "試著靠近裂縫感受",
+        "nextId": "c03-touch-crack",
+        "effects": { "內力": 1, "向武": 1 }
+      }
+    ]
+  },
+  "c03-shen-warn": {
+    "id": "c03-shen-warn",
+    "text": "沈峻：「宗主的封印在崩塌。他撐不了多久了。」遠處正殿方向傳來爭吵聲。",
+    "choices": [
+      {
+        "text": "去正殿看發生什麼事",
+        "nextId": "c03-crisis",
+        "effects": { "智謀": 1 }
+      }
+    ]
+  },
+  "c03-touch-crack": {
+    "id": "c03-touch-crack",
+    "text": "手掌靠近裂縫，體內正魔力量猛地共鳴。你看到了一瞬的幻象——黑暗中一個人形被金光包裹，動彈不得。",
+    "autoEffects": { "內力": 2 },
+    "choices": [
+      {
+        "text": "去正殿看三長老的反應",
+        "nextId": "c03-crisis",
+        "effects": { "智謀": 1 }
+      }
+    ]
+  },
+  "c03-find-allies": {
+    "id": "c03-find-allies",
+    "text": "趙元啟已起來在收拾東西。魏無期不在，床上留了一把匕首——他往禁地方向去了。",
+    "choices": [
+      {
+        "text": "跟趙元啟一起去正殿",
+        "nextId": "c03-crisis",
+        "effects": { "重情": 1, "智謀": 1 }
+      },
+      {
+        "text": "去禁地方向找魏無期",
+        "nextId": "c03-find-wei",
+        "effects": { "向武": 1, "重情": 1 }
+      }
+    ]
+  },
+  "c03-find-wei": {
+    "id": "c03-find-wei",
+    "text": "在禁地外圍找到魏無期，他試圖靠近裂縫但被陣法殘餘力量彈開，肩膀在流血。他看到你：「你也感覺到了？裡面有人在呼救。」",
+    "choices": [
+      {
+        "text": "「先回去。這裡太危險。」",
+        "nextId": "c03-crisis",
+        "effects": { "智謀": 1, "守正": 1 }
+      },
+      {
+        "text": "「我也感覺到了。但現在進不去。」",
+        "nextId": "c03-crisis",
+        "effects": { "內力": 1, "智謀": 1 }
+      }
+    ]
+  },
+  "c03-stay-alert": {
+    "id": "c03-stay-alert",
+    "text": "從窗口觀察：宋長老帶執法堂封鎖主道，陸長老反方向走回藏經閣，周長老召集商隊往山門集結。三方第一反應暴露各自優先級。",
+    "autoEffects": { "智謀": 2 },
+    "choices": [
+      {
+        "text": "去正殿看情況",
+        "nextId": "c03-crisis",
+        "effects": { "智謀": 1 }
+      }
+    ]
+  },
+  "c03-crisis": {
+    "id": "c03-crisis",
+    "text": "正殿前廣場。宋長老宣佈戒嚴。周長老當面反對要下山取續命蘭。陸長老冷笑說解藥在禁地裡不在山下。宋拔劍，周的弟子圍上，陸轉身離開。三方撕破臉。",
+    "choices": [
+      {
+        "text": "站到宋長老身邊",
+        "nextId": "c03-side-song",
+        "effects": { "守正": 2, "名聲": 1 }
+      },
+      {
+        "text": "追上陸長老",
+        "nextId": "c03-side-lu",
+        "effects": { "智謀": 2 }
+      },
+      {
+        "text": "跟周長老一起走",
+        "nextId": "c03-side-zhou",
+        "effects": { "重情": 1, "武力": 1 }
+      },
+      {
+        "text": "趁亂悄悄離開，去找沈峻",
+        "nextId": "c03-side-none",
+        "effects": { "智謀": 1, "桀驁": 1 }
+      }
+    ]
+  },
+
+  "c03-side-song": {
+    "id": "c03-side-song",
+    "text": "宋長老派你和韓策巡邏封鎖通往禁地的路。韓策遞給你一把備用劍。",
+    "choices": [
+      {
+        "text": "接過劍，開始巡邏",
+        "nextId": "c03-song-patrol",
+        "effects": { "武力": 1, "守正": 1 }
+      }
+    ]
+  },
+  "c03-song-patrol": {
+    "id": "c03-song-patrol",
+    "text": "巡邏途中發現魏無期正在靠近禁地裂縫。韓策拔劍攔住他。",
+    "choices": [
+      {
+        "text": "攔住魏無期",
+        "nextId": "c03-stop-wei",
+        "effects": { "守正": 1 }
+      },
+      {
+        "text": "讓韓策收劍，問魏無期在做什麼",
+        "nextId": "c03-let-wei",
+        "effects": { "重情": 1, "智謀": 1 }
+      }
+    ]
+  },
+  "c03-stop-wei": {
+    "id": "c03-stop-wei",
+    "text": "魏無期被攔住後沉默片刻，伸出手掌——淡金色光芒亮起。韓策愣住：「你……是什麼？」魏無期：「跟他一樣。」指向你。",
+    "autoEffects": { "智謀": 1 },
+    "choices": [
+      {
+        "text": "向韓策解釋正魔合一體質",
+        "nextId": "c03-song-quake",
+        "effects": { "名聲": 1, "守正": 1 }
+      },
+      {
+        "text": "不解釋，讓魏無期自己說",
+        "nextId": "c03-song-quake",
+        "effects": { "智謀": 1, "世故": 1 }
+      }
+    ]
+  },
+  "c03-let-wei": {
+    "id": "c03-let-wei",
+    "text": "魏無期：「裡面有人被困住了。我的力量能感覺到他。」韓策看向你，等你做判斷。",
+    "choices": [
+      {
+        "text": "「他說的是真的。」",
+        "nextId": "c03-song-quake",
+        "effects": { "重情": 1 }
+      },
+      {
+        "text": "「先等等，情況還不明朗。」",
+        "nextId": "c03-song-quake",
+        "effects": { "智謀": 1, "守正": 1 }
+      }
+    ]
+  },
+  "c03-song-quake": {
+    "id": "c03-song-quake",
+    "text": "第三次震動。比前兩次都強。禁地裂縫擴大，金光衝天。宋長老趕到現場，親眼目睹裂縫中的異象。",
+    "autoEffects": { "智謀": 1 },
+    "choices": [
+      {
+        "text": "「宋長老，戒嚴攔不住這個。讓我進去看看。」",
+        "nextId": "c03-song-admit",
+        "effects": { "桀驁": 1, "智謀": 1 }
+      },
+      {
+        "text": "等沈峻趕來",
+        "nextId": "c03-song-admit",
+        "effects": { "守正": 1 }
+      }
+    ]
+  },
+  "c03-song-admit": {
+    "id": "c03-song-admit",
+    "text": "宋長老看著裂縫，沉默很久。「戒嚴……沒有用。」他第一次露出動搖。沈峻趕到，掏出第四份密令。宋長老看了內容，閉上眼嘆了一口氣。",
+    "autoEffects": { "智謀": 2 },
+    "choices": [
+      {
+        "text": "跟韓策和魏無期一起前往禁地入口",
+        "nextId": "c03-before-gate",
+        "effects": { "武力": 1 }
+      }
+    ]
+  },
+
+  "c03-side-lu": {
+    "id": "c03-side-lu",
+    "text": "追上陸長老進藏經閣。他鎖門後轉身：「你來得正好。」",
+    "choices": [
+      {
+        "text": "「你知道怎麼進歸墟殿？」",
+        "nextId": "c03-lu-deal",
+        "effects": { "智謀": 1 }
+      },
+      {
+        "text": "「密信裡還有什麼你沒說的？」",
+        "nextId": "c03-lu-deal",
+        "effects": { "智謀": 2 }
+      }
+    ]
+  },
+  "c03-lu-deal": {
+    "id": "c03-lu-deal",
+    "text": "陸長老：「開啟歸墟殿需要兩個條件——正魔合一之人的血，和初代宗主的口訣。口訣在宗主密令裡。」他提出交易：幫你進去，你抄一份功法給他。",
+    "choices": [
+      {
+        "text": "答應交易",
+        "nextId": "c03-lu-lin",
+        "effects": { "智謀": 1, "世故": 1 }
+      },
+      {
+        "text": "「你先告訴我密信的全部內容」",
+        "nextId": "c03-lu-counter",
+        "effects": { "智謀": 2, "桀驁": 1 }
+      },
+      {
+        "text": "「我不是你的工具。」",
+        "nextId": "c03-lu-refuse",
+        "effects": { "桀驁": 2 }
+      }
+    ]
+  },
+  "c03-lu-counter": {
+    "id": "c03-lu-counter",
+    "text": "陸長老笑了：「你學得很快。」他把密信原文給你看——上面還提到歸墟殿內有初代宗主留下的守護機制，不是隨便就能拿走功法的。",
+    "autoEffects": { "智謀": 2 },
+    "choices": [
+      {
+        "text": "「成交。」",
+        "nextId": "c03-lu-lin",
+        "effects": { "世故": 1 }
+      }
+    ]
+  },
+  "c03-lu-refuse": {
+    "id": "c03-lu-refuse",
+    "text": "陸長老不惱：「隨你。門你自己找得到嗎？」他不阻攔也不幫忙，從抽屜拿出糕點慢慢吃。你出了藏經閣，得另找辦法。",
+    "choices": [
+      {
+        "text": "去找沈峻",
+        "nextId": "c03-side-none",
+        "effects": { "智謀": 1 }
+      },
+      {
+        "text": "去找林若瑤",
+        "nextId": "c03-lu-lin",
+        "effects": { "重情": 1 }
+      }
+    ]
+  },
+  "c03-lu-lin": {
+    "id": "c03-lu-lin",
+    "text": "林若瑤出現：「我也要去。我師父的死因可能就在那裡。」陸長老同意——他需要她的醫術。",
+    "choices": [
+      {
+        "text": "跟林若瑤走藏經閣暗道前往禁地",
+        "nextId": "c03-lu-passage",
+        "effects": { "智謀": 1, "重情": 1 }
+      }
+    ]
+  },
+  "c03-lu-passage": {
+    "id": "c03-lu-passage",
+    "text": "藏經閣地下有條暗道直通禁地後山——初代宗主修建的。陸長老花了十年找到它。暗道盡頭，沈峻已經在那裡等著。",
+    "autoEffects": { "智謀": 2 },
+    "choices": [
+      {
+        "text": "跟林若瑤一起前往禁地入口",
+        "nextId": "c03-before-gate",
+        "effects": { "智謀": 1 }
+      }
+    ]
+  },
+
+  "c03-side-zhou": {
+    "id": "c03-side-zhou",
+    "text": "跟周長老和韓策帶商隊往山門衝。周長老走在最前面，步伐急促。",
+    "choices": [
+      {
+        "text": "跟上周長老",
+        "nextId": "c03-zhou-blocked",
+        "effects": { "武力": 1 }
+      }
+    ]
+  },
+  "c03-zhou-blocked": {
+    "id": "c03-zhou-blocked",
+    "text": "山門外的山路被禁地震動引發的落石封死了。周長老試圖清路，但禁地方向又一次脈動，山體持續不穩。",
+    "choices": [
+      {
+        "text": "幫周長老強行清路",
+        "nextId": "c03-zhou-force-check",
+        "effects": { "武力": 1, "向武": 1 }
+      },
+      {
+        "text": "「周長老，下山已經來不及了。」",
+        "nextId": "c03-zhou-truth",
+        "effects": { "智謀": 1, "守正": 1 }
+      }
+    ]
+  },
+  "c03-zhou-force-check": {
+    "id": "c03-zhou-force-check",
+    "text": "你和韓策合力搬開巨石。",
+    "check": {
+      "attribute": "武力",
+      "threshold": 7
+    },
+    "passId": "c03-zhou-force-pass",
+    "failId": "c03-zhou-truth",
+    "passText": "巨石被移開，但前方還有更多落石，根本清不完。",
+    "failText": "巨石紋絲不動。周長老歎氣收手。",
+    "passEffects": { "武力": 2 },
+    "failEffects": { "生命": -5 },
+    "isCheck": true
+  },
+  "c03-zhou-force-pass": {
+    "id": "c03-zhou-force-pass",
+    "text": "清開一塊又來一塊。周長老終於停下，雙手撐在膝蓋上喘氣。",
+    "choices": [
+      {
+        "text": "等周長老開口",
+        "nextId": "c03-zhou-truth",
+        "effects": { "重情": 1 }
+      }
+    ]
+  },
+  "c03-zhou-truth": {
+    "id": "c03-zhou-truth",
+    "text": "周長老坐在落石上，說出真話：「續命蘭我送了五年。上個月的藥量是第一年的三倍。」他第一次用正眼看你。",
+    "autoEffects": { "智謀": 2 },
+    "choices": [
+      {
+        "text": "「所以你一直在救宗主。」",
+        "nextId": "c03-zhou-yan",
+        "effects": { "重情": 1, "智謀": 1 }
+      },
+      {
+        "text": "「續命蘭已經不夠了，對嗎？」",
+        "nextId": "c03-zhou-yan",
+        "effects": { "智謀": 2 }
+      }
+    ]
+  },
+  "c03-zhou-yan": {
+    "id": "c03-zhou-yan",
+    "text": "嚴墨從山路盡頭走來：「周長老，續命蘭已經沒用了。讓那個孩子去歸墟殿——這是唯一的辦法。」周長老沉默地看向你。",
+    "choices": [
+      {
+        "text": "「我去。」",
+        "nextId": "c03-zhou-return",
+        "effects": { "守正": 1, "智謀": 1 }
+      },
+      {
+        "text": "「你跟我一起回去。」",
+        "nextId": "c03-zhou-return",
+        "effects": { "重情": 1, "名聲": 1 }
+      }
+    ]
+  },
+  "c03-zhou-return": {
+    "id": "c03-zhou-return",
+    "text": "周長老讓韓策護送你回禁地。嚴墨也跟著。回山路上嚴墨低聲說：「你娘當年也站在這條路上做過選擇。」沈峻在禁地前等著。",
+    "autoEffects": { "智謀": 1, "重情": 1 },
+    "choices": [
+      {
+        "text": "跟韓策和嚴墨前往禁地入口",
+        "nextId": "c03-before-gate",
+        "effects": { "智謀": 1 }
+      }
+    ]
+  },
+
+  "c03-side-none": {
+    "id": "c03-side-none",
+    "text": "趁三方對峙混亂從側門溜走。後山崖邊找到沈峻，他在餵貓。",
+    "choices": [
+      {
+        "text": "「師兄，我需要你的幫助。」",
+        "nextId": "c03-shen-order",
+        "effects": { "重情": 1, "智謀": 1 }
+      },
+      {
+        "text": "「歸墟殿怎麼開？」",
+        "nextId": "c03-shen-order",
+        "effects": { "智謀": 2 }
+      }
+    ]
+  },
+  "c03-shen-order": {
+    "id": "c03-shen-order",
+    "text": "沈峻掏出第四份密令：入口在禁地正殿下方第三層石階，開啟需口訣加正魔合一之力。「宗主當年獨自嘗試，只有正道之力，強行開啟失敗才被反噬困住。」",
+    "autoEffects": { "智謀": 3 },
+    "choices": [
+      {
+        "text": "「帶上趙元啟。」",
+        "nextId": "c03-call-zhao",
+        "effects": { "重情": 1 }
+      },
+      {
+        "text": "「魏無期應該也去。」",
+        "nextId": "c03-call-wei-join",
+        "effects": { "智謀": 1, "向武": 1 }
+      },
+      {
+        "text": "「就我們兩個去。」",
+        "nextId": "c03-before-gate",
+        "effects": { "桀驁": 1, "智謀": 1 }
+      }
+    ]
+  },
+  "c03-call-zhao": {
+    "id": "c03-call-zhao",
+    "text": "趙元啟趕來，看到密令內容後：「我等你這句話很久了。走吧。」",
+    "choices": [
+      {
+        "text": "前往禁地入口",
+        "nextId": "c03-before-gate",
+        "effects": { "重情": 1 }
+      }
+    ]
+  },
+  "c03-call-wei-join": {
+    "id": "c03-call-wei-join",
+    "text": "找到魏無期。他看到密令，沉默地點頭：「兩個正魔合一體質的人，成功率更高。」",
+    "choices": [
+      {
+        "text": "前往禁地入口",
+        "nextId": "c03-before-gate",
+        "effects": { "內力": 1 }
+      }
+    ]
+  },
+
+  "c03-before-gate": {
+    "id": "c03-before-gate",
+    "text": "禁地正殿前。不管從哪條路來，沈峻都在。他唸出密令上的口訣。正殿內第三層石階下，一道石門浮現，刻著正魔交織的紋路。",
+    "autoEffects": { "智謀": 1 },
+    "choices": [
+      {
+        "text": "伸手觸碰石門，注入正魔之力",
+        "nextId": "c03-forbidden-gate",
+        "effects": { "內力": 1 }
+      }
+    ]
+  },
+  "c03-forbidden-gate": {
+    "id": "c03-forbidden-gate",
+    "text": "你將正魔合一之力灌入石門。",
+    "check": {
+      "attribute": "內力",
+      "threshold": 8
+    },
+    "passId": "c03-gate-open",
+    "failId": "c03-gate-struggle",
+    "passText": "力量穩定輸出，石門緩緩開啟。",
+    "failText": "力量不穩定，石門只開了一條縫。",
+    "passEffects": { "內力": 2 },
+    "failEffects": {},
+    "isCheck": true
+  },
+  "c03-gate-open": {
+    "id": "c03-gate-open",
+    "text": "石門開啟。階梯通往地下深處，空氣中瀰漫著古老的氣息。",
+    "choices": [
+      {
+        "text": "走下階梯",
+        "nextId": "c03-enter",
+        "effects": { "智謀": 1 }
+      }
+    ]
+  },
+  "c03-gate-struggle": {
+    "id": "c03-gate-struggle",
+    "text": "石門只開了一條縫。魏無期衝上來，雙手按住石門另一側，掌心亮起同樣的淡金色光。兩人合力，石門終於完全開啟。你的經脈因過度輸出而劇痛。",
+    "autoEffects": { "生命": -15, "內力": 1 },
+    "choices": [
+      {
+        "text": "忍痛走下階梯",
+        "nextId": "c03-enter",
+        "effects": { "向武": 1 }
+      }
+    ]
+  },
+  "c03-enter": {
+    "id": "c03-enter",
+    "text": "歸墟殿。圓形石殿，穹頂刻滿文字。正中央一個人形被金色光芒包裹，像琥珀裡的蟲——是宗主。他沒死。",
+    "autoEffects": { "智謀": 2 },
+    "choices": [
+      {
+        "text": "靠近宗主",
+        "nextId": "c03-sect-master",
+        "effects": { "守正": 1 }
+      },
+      {
+        "text": "先看穹頂的文字",
+        "nextId": "c03-read-walls",
+        "effects": { "智謀": 2 }
+      }
+    ]
+  },
+  "c03-sect-master": {
+    "id": "c03-sect-master",
+    "text": "宗主意識微弱傳來：「你……終於來了。」他五年前強行開啟歸墟殿失敗，被反噬困住，用殘餘力量維持封印不崩塌。",
+    "autoEffects": { "智謀": 2 },
+    "choices": [
+      {
+        "text": "「穹頂的文字是什麼？」",
+        "nextId": "c03-heart-sutra",
+        "effects": { "智謀": 1 }
+      },
+      {
+        "text": "「我怎樣才能救你？」",
+        "nextId": "c03-ask-price",
+        "effects": { "重情": 1, "守正": 1 }
+      }
+    ]
+  },
+  "c03-read-walls": {
+    "id": "c03-read-walls",
+    "text": "穹頂刻的是正魔合一完整版天樞心經。同行者看了都震驚——這就是數百年來所有人在找的東西。",
+    "autoEffects": { "智謀": 2, "內力": 1 },
+    "choices": [
+      {
+        "text": "去看宗主的狀況",
+        "nextId": "c03-sect-master",
+        "effects": { "守正": 1 }
+      },
+      {
+        "text": "繼續研讀功法內容",
+        "nextId": "c03-heart-sutra",
+        "effects": { "智謀": 1, "內力": 1 }
+      }
+    ]
+  },
+  "c03-ask-price": {
+    "id": "c03-ask-price",
+    "text": "宗主：「穹頂上是完整功法。修煉它能破解反噬，但要以你全部修為為引重鑄經脈。成功率……我不知道。初代宗主自己沒修煉過。」",
+    "autoEffects": { "智謀": 2 },
+    "choices": [
+      {
+        "text": "看穹頂功法",
+        "nextId": "c03-heart-sutra",
+        "effects": { "智謀": 1 }
+      }
+    ]
+  },
+  "c03-heart-sutra": {
+    "id": "c03-heart-sutra",
+    "text": "完整功法確認：能破解反噬，但修煉需以全部修為為代價重鑄經脈。石殿深處浮現一團黑霧——初代宗主留下的守護者殘念。",
+    "choices": [
+      {
+        "text": "面對守護者",
+        "nextId": "c03-guardian",
+        "effects": { "智謀": 1 }
+      }
+    ]
+  },
+  "c03-guardian": {
+    "id": "c03-guardian",
+    "text": "守護者殘念：「你要這功法做什麼？」不是戰鬥，是意圖考驗。",
+    "choices": [
+      {
+        "text": "「救宗主。」",
+        "nextId": "c03-guardian-pass",
+        "effects": { "守正": 2, "重情": 1 }
+      },
+      {
+        "text": "「修煉它，讓自己變強。」",
+        "nextId": "c03-guardian-pass",
+        "effects": { "向武": 2, "桀驁": 1 }
+      },
+      {
+        "text": "「帶出去，讓所有人都能修煉。」",
+        "nextId": "c03-guardian-pass",
+        "effects": { "守正": 1, "名聲": 2 }
+      },
+      {
+        "text": "「先看看它是什麼，再決定。」",
+        "nextId": "c03-guardian-pass",
+        "effects": { "智謀": 2, "世故": 1 }
+      }
+    ]
+  },
+  "c03-guardian-pass": {
+    "id": "c03-guardian-pass",
+    "text": "守護者殘念消散，功法完全開放。外面傳來腳步聲——其他人也在往歸墟殿趕來。時間不多了。",
+    "choices": [
+      {
+        "text": "做出選擇",
+        "nextId": "c03-final-choice",
+        "effects": { "智謀": 1 }
+      }
+    ]
+  },
+  "c03-final-choice": {
+    "id": "c03-final-choice",
+    "text": "功法在眼前，宗主在身邊，外面的人在逼近。你必須現在決定。",
+    "choices": [
+      {
+        "text": "嘗試當場修煉完整功法",
+        "nextId": "c03-master-check",
+        "effects": { "內力": 2, "向武": 1 }
+      },
+      {
+        "text": "把功法交給沈峻",
+        "nextId": "c03-ending-heir",
+        "effects": { "重情": 2, "守正": 1 }
+      },
+      {
+        "text": "抄錄功法，帶出去公開",
+        "nextId": "c03-ending-reform",
+        "effects": { "名聲": 2, "守正": 1 }
+      },
+      {
+        "text": "還有其他選擇……",
+        "nextId": "c03-other-choice",
+        "effects": { "智謀": 1 }
+      }
+    ]
+  },
+  "c03-other-choice": {
+    "id": "c03-other-choice",
+    "text": "你環顧四周。功法、宗主、同伴、追兵——還有別的路。",
+    "choices": [
+      {
+        "text": "不修功法，直接用正魔之力救宗主",
+        "nextId": "c03-ending-sacrifice",
+        "effects": { "重情": 2, "守正": 2 }
+      },
+      {
+        "text": "重新封印歸墟殿",
+        "nextId": "c03-ending-seal",
+        "effects": { "守正": 2, "智謀": 1 }
+      },
+      {
+        "text": "帶著功法離開天樞宗，去南疆",
+        "nextId": "c03-ending-exile",
+        "effects": { "桀驁": 2, "智謀": 1 }
+      },
+      {
+        "text": "獨佔功法，告訴所有人裡面什麼都沒有",
+        "nextId": "c03-ending-shadow",
+        "effects": { "世故": 2, "桀驁": 2 }
+      }
+    ]
+  },
+
+  "c03-master-check": {
+    "id": "c03-master-check",
+    "text": "你閉目運功，正魔兩股力量在經脈中交匯衝撞。",
+    "check": {
+      "attribute": "內力",
+      "threshold": 10
+    },
+    "passId": "c03-ending-master",
+    "failId": "c03-ending-master-fail",
+    "passText": "兩股力量融為一體，經脈重鑄完成。",
+    "failText": "力量失控，經脈承受不住劇烈碎裂。",
+    "passEffects": { "內力": 3 },
+    "failEffects": { "生命": -20 },
+    "isCheck": true
+  },
+  "c03-ending-master": {
+    "id": "c03-ending-master",
+    "text": "【第三章完 — 破繭】修煉完整功法，經脈重鑄，解除宗主封印。代價：修為歸零，從頭開始。",
+    "isEnding": true,
+    "autoEffects": { "內力": 3 }
+  },
+  "c03-ending-heir": {
+    "id": "c03-ending-heir",
+    "text": "【第三章完 — 傳燈】把功法交給沈峻。他用最後的生命嘗試救宗主。你承擔起守護天樞宗的責任。",
+    "isEnding": true,
+    "autoEffects": { "守正": 3 }
+  },
+  "c03-ending-reform": {
+    "id": "c03-ending-reform",
+    "text": "【第三章完 — 破舊立新】當著三位長老的面公開功法。舊秩序崩塌，新規則待建。你成為改革推動者，也成為所有保守派的眼中釘。",
+    "isEnding": true,
+    "autoEffects": { "名聲": 3 }
+  },
+  "c03-ending-sacrifice": {
+    "id": "c03-ending-sacrifice",
+    "text": "【第三章完 — 燃燈】用正魔之力灌入宗主體內。宗主甦醒，但你的力量被抽空，經脈受損，永遠不能修煉。趙元啟哭了。魏無期沉默地扶你走出歸墟殿。",
+    "isEnding": true,
+    "autoEffects": { "重情": 3 }
+  },
+  "c03-ending-seal": {
+    "id": "c03-ending-seal",
+    "text": "【第三章完 — 再封】重新封印歸墟殿。宗主繼續被困，但封印穩固了。三長老被迫重新談判。你背負「放棄宗主」的罵名，但避免了功法外洩的風險。",
+    "isEnding": true,
+    "autoEffects": { "守正": 3 }
+  },
+  "c03-ending-exile": {
+    "id": "c03-ending-exile",
+    "text": "【第三章完 — 南渡】帶功法離開天樞宗，去南疆找母親的師門。嚴墨在山門外等你。趙元啟站在山門裡，沒跟來，但點了點頭。",
+    "isEnding": true,
+    "autoEffects": { "智謀": 3 }
+  },
+  "c03-ending-shadow": {
+    "id": "c03-ending-shadow",
+    "text": "【第三章完 — 暗主】獨佔功法，告訴所有人裡面什麼都沒有。三長老繼續內鬥，但你手握最終底牌。代價：背叛了所有信任你的人。",
+    "isEnding": true,
+    "autoEffects": { "世故": 3, "桀驁": 2 }
+  },
+  "c03-ending-master-fail": {
+    "id": "c03-ending-master-fail",
+    "text": "【第三章完 — 碎道】修煉完整功法失敗，經脈碎裂。你倒在歸墟殿中。宗主用最後的力量穩住你的生機。醒來時一切已經結束——你活著，但修為全廢，宗主……沒能等到。",
+    "isEnding": true,
+    "autoEffects": { "生命": -30 }
+  }
+}
